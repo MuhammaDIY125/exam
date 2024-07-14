@@ -14,22 +14,24 @@ st.write("### Yillar bo'yicha dunyoda chekadiganlar soni")
 
 
 
-tab1, tab2= st.tabs(["Umumiy", "Jins bo'yicha"])
+tab1, tab2, tab3, tab4 = st.tabs(["Umumiy", "Ayollar", "Erkaklar", "Ayollar va Erkaklar"])
+
+def chiqar(y, tpl=('', '')):
+    fig, ax = plt.subplots()
+    sns.lineplot(x='Year', y=y[0], data=df, ax=ax, label=tpl[0])
+    sns.lineplot(x='Year', y=y[-1], data=df, ax=ax, label=tpl[-1])
+    plt.xlabel('Yil')
+    plt.ylabel('Chekadiganlar %')
+    st.pyplot(fig)
 
 with tab1:
-    fig, ax = plt.subplots()
-    sns.lineplot(x='Year', y='Smoking_Population_Percentage', data=df, ax=ax)
-    plt.xlabel('Yil')
-    plt.ylabel('Chekadiganlar %')
-    st.pyplot(fig)
-
+    chiqar(('Smoking_Population_Percentage',))
 with tab2:
-    fig, ax = plt.subplots()
-    sns.lineplot(x='Year', y='Male_Smokers_Percentage', data=df, ax=ax, label='Erkak')
-    sns.lineplot(x='Year', y='Female_Smokers_Percentage', data=df, ax=ax, label='Ayol')
-    plt.xlabel('Yil')
-    plt.ylabel('Chekadiganlar %')
-    st.pyplot(fig)
+    chiqar(('Male_Smokers_Percentage',))
+with tab3:
+    chiqar(('Female_Smokers_Percentage',))
+with tab4:
+    chiqar(('Male_Smokers_Percentage','Female_Smokers_Percentage'), ('Erkak', 'Ayol'))
 
 """
 Year,
