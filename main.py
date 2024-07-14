@@ -37,6 +37,7 @@ with tab3:
     plt.ylabel('Chekadiganlar %')
     st.pyplot(fig)
 
+
 """
 Year,
 Smoking Population Percentage,
