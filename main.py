@@ -12,7 +12,7 @@ st.dataframe(df)
 st.write("## Diagramma")
 st.write("### Yillar bo'yicha dunyoda chekadiganlar soni")
 
-tab1, tab2= st.tabs(["Umumiy", "Jins bo'yicha"])
+tab1, tab2, tab3 = st.tabs(["Umumiy", "Jins bo'yicha", "Yoshlar"])
 
 with tab1:
     fig, ax = plt.subplots()
@@ -25,6 +25,14 @@ with tab2:
     fig, ax = plt.subplots()
     sns.lineplot(x='Year', y='Male_Smokers_Percentage', data=df, ax=ax, label='Erkak')
     sns.lineplot(x='Year', y='Female_Smokers_Percentage', data=df, ax=ax, label='Ayol')
+    plt.xlabel('Yil')
+    plt.ylabel('Chekadiganlar %')
+    st.pyplot(fig)
+
+with tab3:
+    fig, ax = plt.subplots()
+    sns.barplot(data=df, x='Year', y='Smoking_Population_Percentage', ax=ax, label='Umumiy', order=[i*10+1930 for i in range(10)])
+    sns.barplot(data=df, x='Year', y='Youth_Smokers_Percentage', ax=ax, label='Yoshlar', order=[i*10+1930 for i in range(10)])
     plt.xlabel('Yil')
     plt.ylabel('Chekadiganlar %')
     st.pyplot(fig)
