@@ -9,7 +9,7 @@ st.write("## Ma'lumotlar to'plami haqida")
 st.write("Ushbu loyiha 1924 yildan 2023 yilgacha bo'lgan so'nggi 100 yil ichida chekish bo'yicha global ma'lumotlarning keng qamrovli tahlilini taqdim etadi. Asosiy maqsad tarixiy tendentsiyalarni o'rganish, aholi salomatligiga ta'siri va yoshlarning chekish tendentsiyalariga alohida e'tibor berishdir. Ma'lumotlar to'plami chekish odatlari, aholi foizlari, tegishli o'limlar, sog'liqni saqlash xarajatlari, chekishga qarshi kampaniyalar, qonunchilik kuchi va boshqalar bilan bog'liq turli ko'rsatkichlarni o'z ichiga oladi.")
 st.dataframe(df)
 
-st.write("## Diagramma")
+st.write("## Kirish")
 st.write("### Yillar bo'yicha dunyoda chekadiganlar soni")
 
 tab1, tab2, tab3 = st.tabs(["Umumiy", "Jins bo'yicha", "Yoshlar"])
@@ -36,6 +36,18 @@ with tab3:
     plt.xlabel('Yil')
     plt.ylabel('Chekadiganlar %')
     st.pyplot(fig)
+
+"Bu grafiklar orqali ko'rishimiz mumkin ki 1924 yildan 1954 yilgacha chegadifanlar soni tinmasdan oshgan va 1954 yili rekord darajadagi 55% ga teng bo'lgan. Bundan tashqari agar chekuvchilarni jins bo'yisha ajratsak erkak kishilar ayollardan har doim ko'proq bo'lganligini kuzatishimiz mumkin. Yoshlar ham nisbatan 1954 yilgacha ko'pchiligi chekarkan."
+
+"Katta o'zgarishlar 1955 yildan boshlangan. Chekuvchilar asta sekin kamayishgan. Bu tendentsiya 2008-yilgacha davom etgan va shundan keyin minimal 1% darajasida qolgan."
+
+"Biz bunaqa uzgarishlarga nima olib kelganligi o'rganib chiqishni uzimizga maqsad qildik."
+
+
+
+
+
+
 
 """
 Year,
