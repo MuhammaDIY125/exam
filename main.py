@@ -12,8 +12,6 @@ st.dataframe(df)
 st.write("## Diagramma")
 st.write("### Yillar bo'yicha dunyoda chekadiganlar soni")
 
-
-
 tab1, tab2= st.tabs(["Umumiy", "Jins bo'yicha"])
 
 with tab1:
