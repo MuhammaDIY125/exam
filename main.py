@@ -6,5 +6,4 @@ import seaborn as sns
 st.write("#Assalomu alaykum")
 
 df = pd.read_csv('world_smoking_history_1924_2023.csv')
-
-df
+st.line_chart(df)
